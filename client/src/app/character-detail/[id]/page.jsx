@@ -33,7 +33,7 @@ const CharacterDetail = ({ params }) => {
     },
   });
 
-  if (loading) return <Image src="/loading.svg" alt="Next.js Logo" width={180} height={37} />;
+  if (loading) return <Image src="/loading.svg" alt="Loading" width={180} height={37} />;
   if (error) return <p>Error: {error.message}</p>;
 
   const { name, status, species, gender, image } = data.character;

@@ -24,7 +24,7 @@ const CharactersListPage = () => {
 
   if (loading)
     return (
-      <Image src="/loading.svg" alt="Loading..." width={180} height={37} />
+      <Image src="/loading.svg" alt="Loading" width={180} height={37} />
     );
   if (error) return <p>Error: {error.message}</p>;
 

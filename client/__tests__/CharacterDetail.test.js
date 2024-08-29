@@ -13,6 +13,7 @@ const mocks = [
     result: {
       data: {
         character: {
+          __typename: 'Character',
           id: '1',
           name: 'Rick Sanchez',
           status: 'Alive',
@@ -20,7 +21,8 @@ const mocks = [
           gender: 'Male',
           image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
           location: {
-            name: 'Earth',
+            __typename: 'Location',
+            name: 'Citadel of Ricks',
           },
         },
       },
@@ -38,7 +40,11 @@ describe('CharacterDetail Page', () => {
       </MockedProvider>
     );
 
-    expect(screen.getByAltText('Loading...')).toBeInTheDocument();
+    const loadingImage = screen.getByAltText('Loading');
+    expect(loadingImage).toBeInTheDocument();
+    expect(loadingImage).toHaveAttribute('src', '/loading.svg');
+    expect(loadingImage).toHaveAttribute('width', '180');
+    expect(loadingImage).toHaveAttribute('height', '37');
 
     const characterName = await screen.findByText('Rick Sanchez');
     expect(characterName).toBeInTheDocument();
@@ -56,12 +62,16 @@ describe('CharacterDetail Page', () => {
       </MockedProvider>
     );
 
+    // jest.spyOn(window, 'alert').mockImplementation(() => { });
+
     await screen.findByText('Rick Sanchez');
 
     fireEvent.click(screen.getByText('Assign to Location'));
 
+    window.alert = jest.fn();
+
     expect(
       window.alert
-    ).toHaveBeenCalledWith('Rick Sanchez has been assigned to Earth!');
+    ).toHaveBeenCalledWith('Rick Sanchez has been assigned to Citadel of Ricks!');
   });
 });
