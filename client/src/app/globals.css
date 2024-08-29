@@ -1,12 +1,13 @@
 /* globals.css */
 
+/* Mobile */
 body.light {
   background-color: #ffffff;
   color: #000000;
 }
 
 body.dark {
-  background-color: #33383d;
+  background-color: #33383D;
   color: #ffffff;
 }
 
@@ -18,6 +19,48 @@ body.dark {
 .navbar-light .navbar-brand,
 .navbar-light .nav-link {
   color: #000000;
+}
+
+.character-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.character-image {
+  margin-bottom: 20px;
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+  .character-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .character-image {
+    margin-right: 20px;
+  }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .character-info {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .character-details {
+    max-width: 500px;
+  }
 }
 
 

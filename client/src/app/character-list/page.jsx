@@ -29,7 +29,7 @@ const CharactersListPage = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className={`container pt-4 ${theme === "light" ? "bg-light text-dark" : "bg-dark text-light"}`}>
+    <div className={`container pt-4 ${theme === "light" ? "bg-light text-dark" : "bg-[##33383D] text-light"}`}>
       <h1>Characters List</h1>
       <div className="row">
         {data.characters.results.map((character) => (

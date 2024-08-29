@@ -4,7 +4,7 @@ const ToggleTheme = () => {
       <label className="grid cursor-pointer place-items-center">
         <input
           type="checkbox"
-          value="dim"
+          value="forest"
           className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
         <svg
           className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
