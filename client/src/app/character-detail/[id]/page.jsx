@@ -80,7 +80,7 @@ const CharacterDetail = ({ params }) => {
           <p>Gender: {gender}</p>
           <div className="mt-4">
             <p>Current Location: {locationName || "None"}</p>
-            <button className="btn btn-primary mt-3" onClick={handleAssignLocation}>
+            <button className="btn btn-primary mt-3 w-75" onClick={handleAssignLocation}>
               Assign to Location
             </button>
           </div>

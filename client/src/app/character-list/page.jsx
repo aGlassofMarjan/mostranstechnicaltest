@@ -35,10 +35,13 @@ const CharactersListPage = () => {
         {data.characters.results.map((character) => (
           <div key={character.id} className="col-sm-6 col-md-4 mb-4">
             <div className={`card ${theme === "light" ? "bg-white text-dark" : "bg-dark text-light"}`}>
-              <img
+              <Image
                 src={character.image}
-                className="card-img-top"
                 alt={character.name}
+                width={300}
+                height={300}
+                loading="lazy" // lazy loading
+                className="card-img-top"
               />
               <div className="card-body">
                 <h5 className="card-title">{character.name}</h5>
