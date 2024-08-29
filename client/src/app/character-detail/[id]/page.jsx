@@ -3,6 +3,7 @@
 import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const GET_CHARACTER_DETAILS = gql`
   query GetCharacterDetails($id: ID!) {
@@ -23,6 +24,7 @@ const GET_CHARACTER_DETAILS = gql`
 const CharacterDetail = ({ params }) => {
   const { id } = params; // get id from param
   const [locationName, setLocationName] = useState("");
+  const router = useRouter();
 
   // fetch location name
   const { loading, error, data } = useQuery(GET_CHARACTER_DETAILS, {
@@ -34,7 +36,9 @@ const CharacterDetail = ({ params }) => {
 
   if (loading) return (
     <>
-      <Image src="/loading.svg" alt="Loading" width={180} height={37} />
+      <div className="container mt-4 character-detail">
+        <Image src="/loading.svg" alt="Loading" width={180} height={37} />
+      </div>
     </>
   )
   if (error) return <p>Error: {error.message}</p>;
@@ -65,6 +69,7 @@ const CharacterDetail = ({ params }) => {
 
     localStorage.setItem("locations", JSON.stringify(existingLocations));
     alert(`${name} has been assigned to ${locationName}!`);
+    router.push('/character-list');
   };
 
   return (

@@ -24,7 +24,11 @@ const CharactersListPage = () => {
 
   if (loading)
     return (
-      <Image src="/loading.svg" alt="Loading" width={180} height={37} />
+      <>
+        <div className="container">
+          <Image src="/loading.svg" alt="Loading" width={180} height={37} />
+        </div>
+      </>
     );
   if (error) return <p>Error: {error.message}</p>;
 
@@ -41,7 +45,7 @@ const CharactersListPage = () => {
                 width={300}
                 height={300}
                 loading="lazy" // lazy loading
-                className="card-img-top"
+                className="card-img-top img-fluid"
               />
               <div className="card-body">
                 <h5 className="card-title">{character.name}</h5>
