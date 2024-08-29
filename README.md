@@ -1,10 +1,31 @@
-# mostranstechnicaltest
 
-Testing
+# Mostrans Technical Test
+
+My submission for Application Developer position at PT. Mostrans Global Digilog
 
 
-Reference: 
 
-https://www.reddit.com/r/nextjs/comments/19eivo9/best_testing_frameworks_for_nextjs/
 
-https://nextjs.org/docs/app/building-your-application/testing/jest
+## Run Project
+
+To run this project, go to folder `client`
+
+```bash
+  cd client
+```
+
+Deployed link
+
+```bash
+  https://mostranstechnicaltest.vercel.app/character-list
+```
+
+## Features
+
+- React Context on Theme
+- React Functional Component
+- Bootstrap 5
+- Mobile First UI
+- Testing with Jest
+- Wired with Apollo GraphQL
+
